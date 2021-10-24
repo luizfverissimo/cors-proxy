@@ -1,0 +1,22 @@
+{
+  "name": "cors-proxy",
+  "version": "1.0.0",
+  "description": "Cors proxy created with Node.js and Express",
+  "main": "src/server.js",
+  "type": "module",
+  "repository": "https://github.com/luizfverissimo/cors-proxy.git",
+  "author": "Luiz Fernando Veríssimo <62751844+luizfverissimo@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "start-test": "nodemon test-server/test-server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

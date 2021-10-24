@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Test</title>
+  </head>
+  <body>
+    <h1>Open the Console! ===></h1>
+  </body>
+  <script>
+    async function fetchFromTestServer() {
+      try {
+        const res = await fetch('http://localhost:4000/'); //Will give CORS error
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    async function fetchFromProxyServerToTestServer(
+      method,
+      testServerRequest,
+      data
+    ) {
+      const requestUri = encodeURIComponent(testServerRequest);
+      try {
+        if (data) {
+          const res = await fetch(`http://localhost:3000/${requestUri}`, {
+            method,
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(data)
+          }); //Will not give CORS error
+          const responseData = await res.json();
+          console.log(responseData);
+          return;
+        }
+
+        const res = await fetch(`http://localhost:3000/${requestUri}`, {
+          method
+        }); //Will not give CORS error
+        const responseData = await res.json();
+        console.log(responseData);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    fetchFromTestServer();
+    fetchFromProxyServerToTestServer('GET', 'http://localhost:4000/');
+    const data = {
+      name: 'Luiz',
+      email: 'luizfverissimo@mail.com'
+    };
+    fetchFromProxyServerToTestServer('POST', 'http://localhost:4000/', data);
+  </script>
+</html>
