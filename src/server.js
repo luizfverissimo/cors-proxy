@@ -33,5 +33,5 @@ app.all('/:serverUrl', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Test Server listening at http://localhost:${port}`);
+  console.log(`Cors Proxy listening at http://localhost:${port}`);
 });
