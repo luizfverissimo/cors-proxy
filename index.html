@@ -50,11 +50,12 @@
     }
 
     fetchFromTestServer();
-    fetchFromProxyServerToTestServer('GET', 'http://localhost:4000/');
+    // fetchFromProxyServerToTestServer('GET', 'https://pokeapi.co/api/v2/pokemon/?limit=150');
     const data = {
       name: 'Luiz',
       email: 'luizfverissimo@mail.com'
     };
-    fetchFromProxyServerToTestServer('POST', 'http://localhost:4000/', data);
+    // fetchFromProxyServerToTestServer('POST', 'http://localhost:4000/', data);
+    fetchFromProxyServerToTestServer('DELETE', 'http://localhost:4000/user/10');
   </script>
 </html>

@@ -16,6 +16,13 @@ app.post('/', (req, res) => {
   res.send({...req.body, message: 'Data was process!'})
 })
 
+app.delete('/user/:id', (req, res) => {
+  const {id} = req.params
+  console.log(id)
+  res.status(200)
+  res.send({message: `The user with id= ${id} was deleted!`})
+})
+
 app.listen(port, () => {
   console.log(`Test Server listennig at http://localhost:${port}`);
 });
