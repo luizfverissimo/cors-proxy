@@ -32,6 +32,7 @@ You also can use the host server passing the encoded URL through ```https://lfv-
 
 ## Author
 [<img alt="Logo LF Verissimo - Front-end Developer" src="https://github.com/luizfverissimo/luizfverissimo/blob/8604eedb8ecf5eeb23f8ffae63cfdf8eba6513c3/banner.png?raw=true" />](https://lfverissimo.com)
+
 👤 **Luiz Fernando Veríssimo <luizfverissimo@gmail.com>**
 
 * Website: http://lfverissimo.com
